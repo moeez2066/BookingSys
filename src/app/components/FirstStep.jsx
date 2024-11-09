@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "./FirstStep.module.css";
 
-const FirstStep = () => {
+const FirstStep = ({ onNext }) => {
   return (
     <div className={styles.container}>
       <div className={styles.leftColumn}>
-        <h1 className={styles.title}>packages</h1>
+        <h1 className={styles.title}>Packages</h1>
         <div className={styles.stepDescription}>
           <div className="flex items-center justify-center">
             <div className={styles.roundNumber}>01</div>
@@ -21,7 +21,8 @@ const FirstStep = () => {
         </div>
       </div>
       <div className={styles.rightColumn}>
-        <div className={styles.packageCard}>
+        {/* Package 1: General Fitness */}
+        <div className={styles.packageCard} onClick={onNext}>
           <div className={styles.imageWrapper}>
             <Image
               src="/general-fitness.jpg"
@@ -37,10 +38,13 @@ const FirstStep = () => {
             <p className={styles.packageDescription}>
               Includes weight loss, bodybuilding, CrossFit, and kickboxing.
             </p>
-            <button className={styles.selectButton}>select</button>
+            <button className={styles.selectButton} onClick={onNext}>
+              select
+            </button>
           </div>
         </div>
-        <div className={styles.packageCard}>
+        {/* Package 2: Pilates */}
+        <div className={styles.packageCard} onClick={onNext}>
           <div className={styles.imageWrapper}>
             <Image
               src="/pilates.jpg"
@@ -57,7 +61,9 @@ const FirstStep = () => {
               Features Reformer Pilates and Mat
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pilates.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </p>
-            <button className={styles.selectButton}>select</button>
+            <button className={styles.selectButton} onClick={onNext}>
+              select
+            </button>
           </div>
         </div>
       </div>
