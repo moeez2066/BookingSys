@@ -13,8 +13,13 @@ export default function Home() {
 
   return (
     <>
-      <FirstStep />
-      <SecondStep />
+      {step === 1 && <FirstStep onNext={goToNextStep} />}
+      {step === 2 && (
+        <>
+          <FirstStep onNext={goToNextStep} />
+          <SecondStep />
+        </>
+      )}
     </>
   );
 }
