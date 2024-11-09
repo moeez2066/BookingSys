@@ -8,7 +8,7 @@ export default function Home() {
 
   // Function to move to the next step
   const goToNextStep = () => {
-    setStep(step + 1);
+    setStep(2);
   };
 
   return (
