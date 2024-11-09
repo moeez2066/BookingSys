@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./FirstStep.module.css";
 
 const FirstStep = () => {
@@ -22,7 +23,14 @@ const FirstStep = () => {
       <div className={styles.rightColumn}>
         <div className={styles.packageCard}>
           <div className={styles.imageWrapper}>
-            <img src="/general-fitness.jpg" alt="General Fitness" />
+            <Image
+              src="/general-fitness.jpg"
+              alt="General Fitness"
+              layout="responsive"
+              width={200}
+              height={100}
+              objectFit="cover"
+            />
           </div>
           <div className={styles.packageInfo}>
             <h2 className={styles.packageTitle}>GENERAL FITNESS</h2>
@@ -34,12 +42,20 @@ const FirstStep = () => {
         </div>
         <div className={styles.packageCard}>
           <div className={styles.imageWrapper}>
-            <img src="/pilates.jpg" alt="General Fitness" />
+            <Image
+              src="/pilates.jpg"
+              alt="Pilates"
+              layout="responsive"
+              width={100}
+              height={100}
+              objectFit="cover"
+            />
           </div>
           <div className={styles.packageInfo}>
-            <h2 className={styles.packageTitle}>GENERAL FITNESS</h2>
+            <h2 className={styles.packageTitle}>PILATES</h2>
             <p className={styles.packageDescription}>
-              Includes weight loss, bodybuilding, CrossFit, and kickboxing.
+              Features Reformer Pilates and Mat
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pilates.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </p>
             <button className={styles.selectButton}>select</button>
           </div>
