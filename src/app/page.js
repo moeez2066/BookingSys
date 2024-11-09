@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import FirstStep from "./components/FirstStep";
 import SecondStep from "./components/SecondStep";
@@ -13,8 +13,8 @@ export default function Home() {
 
   return (
     <>
-      {step === 1 && <FirstStep onNext={goToNextStep} />}
-      {step === 2 && <SecondStep />}
+      <FirstStep />
+      <SecondStep />
     </>
   );
 }
