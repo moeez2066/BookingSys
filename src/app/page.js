@@ -2,24 +2,47 @@
 import React, { useState } from "react";
 import FirstStep from "./components/FirstStep";
 import SecondStep from "./components/SecondStep";
+import ThirdStep from "./components/ThirdStep";
 
 export default function Home() {
-  const [step, setStep] = useState(1); // Initial step is set to 1
+  const [step, setStep] = useState(1);
+  const [selectedSpecialty, setSelectedSpecialty] = useState(null);
+  const [selectedPackage, setSelectedPackage] = useState(null);
+  const [selectedTrainer, setSelectedTrainer] = useState(null);
 
-  // Function to move to the next step
-  const goToNextStep = () => {
+  const goToNextStep = (specialty) => {
+    setSelectedSpecialty(specialty);
     setStep(2);
+  };
+
+  const handlePackageSelection = (pkg) => {
+    setSelectedPackage(pkg);
+    setStep(3);
+  };
+
+  const handleTrainerSelection = (trainer) => {
+    setSelectedTrainer(trainer);
+    setStep(4); // Assuming you want a fourth step or summary view
   };
 
   return (
     <>
-      {step === 1 && <FirstStep onNext={goToNextStep} />}
-      {step === 2 && (
-        <>
-          <FirstStep onNext={goToNextStep} />
-          <SecondStep />
-        </>
+      {step >= 1 && (
+        <FirstStep onNext={(specialty) => goToNextStep(specialty)} />
       )}
+      {step >= 2 && (
+        <SecondStep
+          selectedSpecialty={selectedSpecialty}
+          onNext={(pkg) => handlePackageSelection(pkg)}
+        />
+      )}
+      {step >= 3 && (
+        <ThirdStep
+          selectedData={{ selectedSpecialty, selectedPackage }}
+          onNext={(trainer) => handleTrainerSelection(trainer)}
+        />
+      )}
+      {/* Add Step 4 or Summary if needed */}
     </>
   );
 }

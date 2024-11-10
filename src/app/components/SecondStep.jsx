@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styles from "./SecondStep.module.css";
 import { packages } from "../sessions/dat";
 
-const SecondStep = () => {
+const SecondStep = ({ selectedSpecialty, onNext }) => {
   const [activePackage, setActivePackage] = useState(null);
 
   const togglePackage = (index) => {
@@ -66,7 +66,14 @@ const SecondStep = () => {
                       <br />
                       {session.rate}
                     </p>
-                    <button className={styles.selectButton}>select</button>
+                    <button
+                      className={styles.selectButton}
+                      onClick={() =>
+                        onNext({ name: pkg.name, ...session })
+                      }
+                    >
+                      select
+                    </button>
                   </div>
                 ))}
               </div>

@@ -21,8 +21,10 @@ const FirstStep = ({ onNext }) => {
         </div>
       </div>
       <div className={styles.rightColumn}>
-        {/* Package 1: General Fitness */}
-        <div className={styles.packageCard} onClick={onNext}>
+        <div
+          className={styles.packageCard}
+          onClick={() => onNext("General Fitness")}
+        >
           <div className={styles.imageWrapper}>
             <Image
               src="/general-fitness.jpg"
@@ -38,13 +40,10 @@ const FirstStep = ({ onNext }) => {
             <p className={styles.packageDescription}>
               Includes weight loss, bodybuilding, CrossFit, and kickboxing.
             </p>
-            <button className={styles.selectButton} onClick={onNext}>
-              select
-            </button>
+            <button className={styles.selectButton}>select</button>
           </div>
         </div>
-        {/* Package 2: Pilates */}
-        <div className={styles.packageCard} onClick={onNext}>
+        <div className={styles.packageCard} onClick={() => onNext("Pilates")}>
           <div className={styles.imageWrapper}>
             <Image
               src="/pilates.jpg"
@@ -61,9 +60,7 @@ const FirstStep = ({ onNext }) => {
               Features Reformer Pilates and Mat
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pilates.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </p>
-            <button className={styles.selectButton} onClick={onNext}>
-              select
-            </button>
+            <button className={styles.selectButton}>select</button>
           </div>
         </div>
       </div>
