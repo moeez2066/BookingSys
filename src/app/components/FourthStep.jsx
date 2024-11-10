@@ -13,6 +13,7 @@ const FourthStep = () => {
         <p className={styles.descriptionText}>
           Choose the days and times that suit you from our trainers' availability. We'll confirm your schedule so you can start working towards your fitness goals.
         </p>
+        
       </div>
       <div className={styles.rightColumn}>
         {/* <CalendarComponent /> */}
