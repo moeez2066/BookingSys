@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import FirstStep from "./components/FirstStep";
 import SecondStep from "./components/SecondStep";
 import ThirdStep from "./components/ThirdStep";
+import FourthStep from "./components/FourthStep";
 
 export default function Home() {
   const [step, setStep] = useState(1);
@@ -42,7 +43,12 @@ export default function Home() {
           onNext={(trainer) => handleTrainerSelection(trainer)}
         />
       )}
-      {/* Add Step 4 or Summary if needed */}
+      {step >= 4 && (
+        <FourthStep
+          selectedData={{ selectedSpecialty, selectedPackage }}
+          onNext={(trainer) => handleTrainerSelection(trainer)}
+        />
+      )}
     </>
   );
 }
